@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Solicit Track</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="login" class="card hide">
+  <h1>Solicit Track</h1>
+  <p style="color:var(--mu)">Admin login</p>
+  <label>Email</label><input id="lu" type="email" autocomplete="username">
+  <label style="margin-top:8px">Password</label><input id="lp" type="password" autocomplete="current-password">
+  <label style="display:flex;align-items:center;gap:6px;margin-top:8px;cursor:pointer"><input type="checkbox" id="showpw" style="width:auto"> Show password</label>
+  <div class="err" id="lerr"></div>
+  <button class="p" id="lbtn" style="width:100%">Log in</button>
+</div>
+
+<div class="wrap hide" id="app">
+  <header><h1>Solicit Track</h1><div><button id="csv">Export CSV</button> <button id="out" class="hide">Log out</button></div></header>
+  <div id="msg" class="card hide"></div>
+  <div class="stats">
+    <div class="stat"><b id="sTot">₱0.00</b><span>Total amount given</span></div>
+    <div class="stat"><b id="sCnt">0</b><span>Solicitors / requests</span></div>
+    <div class="stat"><b id="sPend">0</b><span>Pending</span></div>
+    <div class="stat"><b id="sDue">0</b><span>Follow-ups due</span></div>
+  </div>
+
+  <div class="card">
+    <h2 id="fh">Add solicitation</h2>
+    <div class="grid">
+      <div><label>Date received</label><input type="date" id="fDate"></div>
+      <div><label>Solicitor / Name *</label><input id="fName"></div>
+      <div><label>Type *</label><select id="fType"><option>SK Federation</option><option>SK</option><option>Financial Assistance</option><option>Medical Assistance</option><option>Burial Assistance</option><option>Organization</option></select></div>
+      <div><label>Contact</label><input id="fContact"></div>
+      <div><label>Amount given (₱)</label><input type="number" min="0" step="0.01" id="fAmt" placeholder="0.00"></div>
+      <div><label>Follow-up date</label><input type="date" id="fFu"></div>
+      <div><label>Status</label><select id="fSt"><option>Pending</option><option>Given</option><option>Declined</option></select></div>
+    </div>
+    <div style="margin-top:10px"><label>Purpose / Remarks</label><textarea id="fRem" rows="2"></textarea></div>
+    <div style="margin-top:10px"><button class="p" id="save">Save record</button> <button id="cancel" class="hide">Cancel edit</button></div>
+  </div>
+
+  <div class="card">
+    <div class="bar">
+      <input id="q" placeholder="Search name, contact, remarks…">
+      <select id="ft"><option value="">All types</option><option>SK Federation</option><option>SK</option><option>Financial Assistance</option><option>Medical Assistance</option><option>Burial Assistance</option><option>Organization</option></select>
+      <select id="fs"><option value="">All statuses</option><option>Pending</option><option>Given</option><option>Declined</option></select>
+    </div>
+    <div class="tw"><table><thead><tr><th>Date</th><th>Name</th><th>Type</th><th>Remarks</th><th>Amount given (₱)</th><th>Follow-up</th><th>Status</th><th></th></tr></thead><tbody id="tb"></tbody></table></div>
+    <div id="empty" class="empty hide">No records yet. Add your first solicitation above.</div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="app.js"></script></body></html>

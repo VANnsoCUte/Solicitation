@@ -1,0 +1,27 @@
+:root{--bg:#f5f6f8;--card:#fff;--tx:#1d2330;--mu:#6b7385;--bd:#dde1e8;--ac:#1f5fbf;--ac2:#fff;--ok:#1b8a4b;--wr:#c27a00;--er:#c0392b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151a23;--card:#1e2530;--tx:#e8ecf3;--mu:#9aa4b8;--bd:#313a4a;--ac:#5b9bff;--ac2:#0b1220;--ok:#4cc98a;--wr:#e0a73a;--er:#ff7a6b}}
+:root[data-theme="dark"]{--bg:#151a23;--card:#1e2530;--tx:#e8ecf3;--mu:#9aa4b8;--bd:#313a4a;--ac:#5b9bff;--ac2:#0b1220;--ok:#4cc98a;--wr:#e0a73a;--er:#ff7a6b}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+h1{font-size:22px;margin:0}h2{font-size:16px;margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.stat{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px}
+.stat b{display:block;font-size:20px}.stat span{color:var(--mu);font-size:13px}
+label{display:block;font-size:13px;color:var(--mu);margin-bottom:3px}
+input,select,textarea,button{font:inherit;color:var(--tx)}
+input,select,textarea{width:100%;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+button{padding:8px 14px;border-radius:8px;border:1px solid var(--bd);background:var(--card);cursor:pointer}
+button.p{background:var(--ac);color:var(--ac2);border-color:var(--ac)}button.d{color:var(--er)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.bar>*{flex:1 1 150px}.bar button{flex:0 0 auto}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:900px}
+th,td{padding:7px 8px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top;font-size:14px}
+th{color:var(--mu);font-weight:600;font-size:12px;text-transform:uppercase}
+td input,td select{padding:5px 7px;font-size:13px}
+.badge{padding:2px 8px;border-radius:99px;font-size:12px;border:1px solid var(--bd)}
+.due{color:var(--er);font-weight:600}.soon{color:var(--wr);font-weight:600}
+#login{max-width:340px;margin:12vh auto}.hide{display:none!important}.err{color:var(--er);font-size:13px;min-height:18px}
+.empty{color:var(--mu);text-align:center;padding:24px}
